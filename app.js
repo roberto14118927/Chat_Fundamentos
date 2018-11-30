@@ -20,15 +20,18 @@ console.log('Hola');
 io.on('connection', (socket) => {
     console.log('Nuevo Usuario');
 
-    socket.username = "Anonimo";
+	socket.username = "Desconocido"
 
     socket.on('change_username', (data) => {
-        socket.username = data.username;
+        socket.username = data.username
     })
 
     socket.on('new_message', (data) => {
-        console.log(data)
-       io.sockets.emit('new_message', {message: data.message, username: socket.username})
+        io.sockets.emit('new_message', {message : data.message, username : socket.username});
+    })
+
+    socket.on('typing', (data) => {
+    	socket.broadcast.emit('typing', {username : socket.username})
     })
 
 

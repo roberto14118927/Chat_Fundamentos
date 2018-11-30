@@ -223,11 +223,12 @@
 <head>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js">
-      <script src="http://172.20.10.9:3000/socket.io/socket.io.js"></script>
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+  <script src="http://192.168.8.11:3000/socket.io/socket.io.js"></script>
+  
   <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -236,38 +237,42 @@
 
 <body>
   <div class="container">
-    <h3 class=" text-center">Messaging</h3>
+    <hr>
+    <!-- <h3 class=" text-center">Chat Fundamentos</h3> -->
     <div class="messaging">
       <div class="inbox_msg">
         <div class="inbox_people">
           <div class="headind_srch">
             <div class="recent_heading">
-              <h4>Recent</h4>
+              <!-- <h4>Recent</h4> -->
             </div>
             <div class="srch_bar">
-              <div class="stylish-input-group">
-                <input type="text" class="search-bar" placeholder="Search">
+              <div class="stylish-input-group" id="change_username">
+                <input type="text" class="search-bar"  id="username"  placeholder="Nombre">
                 <span class="input-group-addon">
-                  <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                  <button type="button"  id="send_username" > <i class="fa fa-search" aria-hidden="true"></i> </button>
                 </span> </div>
             </div>
           </div>
           <div class="inbox_chat">
             <div class="chat_list active_chat">
-              <div class="chat_people">
+              <!-- <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                 <div class="chat_ib">
                   <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions
                     astrology under one roof.</p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
         <div class="mesgs">
           <div class="msg_history">
-            <div class="incoming_msg">
+            <div id="chatroom">
+
+            </div>
+            <!-- <div class="incoming_msg">
               <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
               </div>
               <div class="received_msg">
@@ -277,46 +282,15 @@
                   <span class="time_date"> 11:01 AM | June 9</span>
                 </div>
               </div>
-            </div>
-            <div class="outgoing_msg">
-              <div class="sent_msg">
-                <p>Test which is a new approach to have all
-                  solutions</p>
-                <span class="time_date"> 11:01 AM | June 9</span>
-              </div>
-            </div>
-            <div class="incoming_msg">
-              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
-              </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <p>Test, which is a new approach to have</p>
-                  <span class="time_date"> 11:01 AM | Yesterday</span>
-                </div>
-              </div>
-            </div>
-            <div class="outgoing_msg">
-              <div class="sent_msg">
-                <p>Apollo University, Delhi, India Test</p>
-                <span class="time_date"> 11:01 AM | Today</span>
-              </div>
-            </div>
-            <div class="incoming_msg">
-              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
-              </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <p>We work directly with our designers and suppliers,
-                    and sell direct to you, which means quality, exclusive
-                    products, at a price anyone can afford.</p>
-                  <span class="time_date"> 11:01 AM | Today</span>
-                </div>
-              </div>
-            </div>
+            </div> -->
+
           </div>
-          <div class="type_msg">
-            <div class="input_msg_write">
-              <input type="text" id="message" class="write_msg" placeholder="Type a message" />
+          <div id="feedback">
+
+          </div>
+          <div class="type_msg" >
+            <div class="input_msg_write" >
+              <input type="text" id="message" class="write_msg" placeholder="mensaje" />
               <button id="send_message" class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
             </div>
           </div>
@@ -324,7 +298,7 @@
       </div>
 
 
-      <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
+      <!-- <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p> -->
 
     </div>
   </div>
